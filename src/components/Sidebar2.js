@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar2 = () => {
     const [categories, setCategories] = useState([])
     useEffect(() => {
         fetch('https://tech-tutor-server-red.vercel.app/categories')
@@ -55,4 +56,4 @@ const Sidebar = () => {
     )
 };
 
-export default Sidebar;
+export default Sidebar2;
