@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className=" p-4 dark:bg-gray-100 dark:text-gray-800 shadow-md">
+        <header className=" p-4 dark:bg-gray-100 dark:text-gray-800 shadow-md z-40">
             <div className="flex justify-between h-16 max-w-screen-xl mx-auto">
                 <Link to="" className="flex items-center ">
                     logo
                 </Link>
                 <ul className="items-stretch hidden space-x-3 lg:flex">
 
-                    <Link to="/courses" className="flex items-center mx-4 -mb-1 hover:border-b-2  text-violet-600 hover:border-violet-600 transition duration-300 ease-in-out">Courses</Link>
+                    <Link to='/courses' className="flex items-center mx-4 -mb-1 hover:border-b-2  text-violet-600 hover:border-violet-600 transition duration-300 ease-in-out">Courses</Link>
 
                     <li className="flex">
                         <Link to="/faq" className="flex items-center mx-4 -mb-1 hover:border-b-2  text-violet-600 hover:border-violet-600 transition duration-300 ease-in-out">FAQ</Link>

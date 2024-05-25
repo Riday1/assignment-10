@@ -15,7 +15,7 @@ const Sidebar = () => {
                     <h2 className="text-md font-semibold tracking-widest uppercase dark:text-gray-600">Courses Categories</h2>
                     <div className="flex flex-col space-y-5 ">
                         {
-                            categories.map(c => <Link className='text-sm underline text-violet-700' to={`/categories/${c.id}`}>{c.category_name}</Link>)
+                            categories.map(category => <Link key={category.id} className='text-sm underline text-violet-700' to={`/categories/${category.id}`}>{category.category_name}</Link>)
                         }
                     </div>
                 </nav>
