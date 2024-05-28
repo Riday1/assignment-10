@@ -1,19 +1,49 @@
 import React from 'react';
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaSquareCheck } from "react-icons/fa6";
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import { FaStar } from "react-icons/fa6"
+import { FaDollarSign } from "react-icons/fa6";
+import { FaRegFilePdf } from "react-icons/fa6";
 
-const CourseDetails = ({ course }) => {
 
-    const { id, category_id, category_name, dtails, image, price, ratings, review, title } = course// I WILL MODIFY IT 5 MINUTES LATER
+const CourseDetails = () => {
+    const courseDetails = useLoaderData();
+    const navigate = useNavigate()
+    const { id, category_id, category_name, details, image, price, ratings, review, title } = courseDetails// I WILL MODIFY IT 5 MINUTES LATER
+
     return (
-        <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800">
-            <div>
-                <img src={image} alt="" className="object-cover w-full mb-4 h-20  dark:bg-gray-500" />
+
+        <div className="flex flex-col max-w-xl mx-auto p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-100 mt-5 text-gray-800">
+            <div className="flex space-x-4 items-center">
+                <h1 className='text-xl font-bold flex-grow'>COURSE DETAILS </h1>
+                <button className='text-2xl bg-violet-700 text-white rounded py-1 px-2'><FaRegFilePdf /></button>
+
+            </div>
+            <div className='mt-3'>
+                <img src={image} alt="" className="rounded-md w-full h-62" />
                 <h2 className="mb-1 text-xl font-semibold">{title}</h2>
-                <p className="text-sm dark:text-gray-600">
-                    { }
-                </p>
+                <p className="text-sm dark:text-gray-600">{details?.short_brief}</p>
+            </div>
+            <div>
+                {
+                    details?.features?.map((feature) => <p className='flex items-center'>
+                        <FaSquareCheck className='text-violet-600 text-xl' />
+                        <span className='text-xl ml-4'>{feature}</span>
+                    </p>)
+                }
             </div>
             <div className="flex flex-wrap justify-between">
-                <div className="space-x-2">
+                <div className='flex items-center'>
+
+                    <FaStar className='text-yellow-400 text-2xl' />
+                    <span className='font-bold text-violet-600 text-xl ml-3 '>({ratings}.0)</span>
+                </div>
+                <div className='flex items-center'>
+                    <FaDollarSign className='text-violet-500 text-2xl' />
+                    <span className='font-bold text-violet-600 text-xl ml-1 '>{price}</span>
+                </div>
+                {/* <div className="space-x-2">
                     <button aria-label="Share this post" type="button" className="p-2 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4 h-4 fill-current dark:text-violet-600">
                             <path d="M404,344a75.9,75.9,0,0,0-60.208,29.7L179.869,280.664a75.693,75.693,0,0,0,0-49.328L343.792,138.3a75.937,75.937,0,1,0-13.776-28.976L163.3,203.946a76,76,0,1,0,0,104.108l166.717,94.623A75.991,75.991,0,1,0,404,344Zm0-296a44,44,0,1,1-44,44A44.049,44.049,0,0,1,404,48ZM108,300a44,44,0,1,1,44-44A44.049,44.049,0,0,1,108,300ZM404,464a44,44,0,1,1,44-44A44.049,44.049,0,0,1,404,464Z"></path>
@@ -40,11 +70,17 @@ const CourseDetails = ({ course }) => {
                         </svg>
                         <span>283</span>
                     </button>
-                </div>
+                </div> */}
             </div>
-            <button type="button" className="w-full px-8 py-2 font-semibold rounded-md bg-violet-700 text-gray-100">Rounded</button>
-        </div>
+            <button onClick={() => navigate(`/checkout/${id}`)} type="button" className="flex justify-center items-center w-full px-8 py-2 font-semibold rounded-md bg-violet-700 text-gray-100">
+                Get Premium Access
+            </button>
+        </div >
+
     );
 };
 
 export default CourseDetails;
+
+
+

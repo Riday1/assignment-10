@@ -1,19 +1,54 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Login = () => {
+    const { signIn, setUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation()
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const from = location?.state?.from?.pathname || '/'
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                if (user?.emailVerified) {
+                    setUser(user) //  this will set the user with emailVerified : true , then header element will be  toggle from sing in to logout 
+                    navigate(from, { replace: true })
+                    form.reset()
+                    Swal.fire({
+                        title: "Login Successfully",
+                        icon: "success"
+                    });
+                }
+                else {
+                    Swal.fire({
+                        title: "Email Not Verified",
+                        text: "To login please verify your email ",
+                        icon: "error"
+                    });
+                }
+            })
+            .catch(e => console.log(e))
+    }
     return (
-        <div className='h-full flex justify-center items-center mt-20'>
+        <div className=' flex justify-center items-center mt-20'>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 text-gray-800">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
-                <form noValidate="" action="" className="space-y-6">
+                <form onSubmit={handleSubmit} noValidate="" action="" className="space-y-6">
 
                     <div className="space-y-1 text-sm">
-                        <input type="email" name="username" id="username" placeholder="Email" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
+                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
+                        <input type="password" name="password" id="password" placeholder="**********" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
                         <div className="flex justify-end text-xs text-gray-600">
                             <a className='underline text-violet-600' rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
