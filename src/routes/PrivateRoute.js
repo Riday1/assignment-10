@@ -11,18 +11,22 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation();
 
-    console.log(location)
+    // console.log(location)
     if (loading) {
         return <Spinner></Spinner>
     }
     if (!user) {
-        Swal.fire({
-            title: "Please Login ",
-            text: "To get premium access you have to login from your account",
-            icon: "error"
-        });
-
-        return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+        if (location.pathname === '/profile') {
+            return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+        }
+        else {
+            Swal.fire({
+                title: "Please Login ",
+                text: "To get premium access you have to login from your account",
+                icon: "error"
+            });
+            return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+        }
     }
     return children;
 };

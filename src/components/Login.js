@@ -16,6 +16,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         const from = location?.state?.from?.pathname || '/'
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
@@ -39,8 +40,8 @@ const Login = () => {
             .catch(e => console.log(e))
     }
     return (
-        <div className=' flex justify-center items-center mt-20'>
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 text-gray-800">
+        <div className='h-screen dark:bg-gray-600 flex justify-center items-center '>
+            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 dark:bg-slate-200 text-gray-800 shadow-md">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSubmit} noValidate="" action="" className="space-y-6">
 
@@ -50,7 +51,7 @@ const Login = () => {
                     <div className="space-y-1 text-sm">
                         <input type="password" name="password" id="password" placeholder="**********" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
                         <div className="flex justify-end text-xs text-gray-600">
-                            <a className='underline text-violet-600' rel="noopener noreferrer" href="#">Forgot Password?</a>
+                            <Link className='underline text-violet-600' to=''>Forgot Password?</Link>
                         </div>
                     </div>
                     <button className="block w-full p-3 text-center  text-gray-50 bg-violet-600 active:bg-violet-500 rounded-md ">Login</button>

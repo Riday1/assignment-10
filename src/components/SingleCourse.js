@@ -8,7 +8,7 @@ const SingleCourse = ({ course }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800">
+        <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-lg dark:bg-gray-50 dark:text-gray-800 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-xl hover:bg-violet-50">
             <div>
                 <img src={image} alt="" className="object-cover w-full mb-4 h-32 rounded-md  dark:bg-gray-500" />
                 <h2 className="mb-1 text-xl font-semibold">{title}</h2>

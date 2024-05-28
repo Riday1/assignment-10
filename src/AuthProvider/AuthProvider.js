@@ -1,6 +1,6 @@
 
 
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updatePassword, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase.config/firebase.config'
 import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
+    const [darkMode, setDarkMode] = useState(false)
 
     const createUser = (email, password) => {
         setLoading(true)
@@ -68,6 +69,9 @@ const AuthProvider = ({ children }) => {
         // .then catch
     }
 
+    const changePassword = (newPassword) => {
+        return updatePassword(auth.currentUser, newPassword)
+    }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -79,7 +83,7 @@ const AuthProvider = ({ children }) => {
         return () => unSubscribe()
     }, [user])
 
-    const authInfo = { user, signIn, createUser, logOut, verifyEmail, updateUser, signInWithGoogle, signInWithGithub, setUser, loading }
+    const authInfo = { user, signIn, createUser, logOut, verifyEmail, updateUser, signInWithGoogle, signInWithGithub, setUser, loading, changePassword, darkMode, setDarkMode }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

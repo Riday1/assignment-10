@@ -5,10 +5,10 @@ import Footer from '../components/Footer';
 
 const Main = () => {
     return (
-        <div className=''>
+        <div className='h-auto'>
             <Header></Header>
             <Outlet></Outlet>
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 };
