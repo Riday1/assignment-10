@@ -57,7 +57,7 @@ const Register = () => {
             .catch(e => console.error(e))
     }
     return (
-        <div className=' flex justify-center items-center mt-20'>
+        <div className='flex justify-center items-center h-screen max-w-screen-xl mx-auto'>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 text-gray-800">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form onSubmit={handleSubmit} noValidate="" className="space-y-6">

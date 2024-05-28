@@ -3,8 +3,6 @@ import React from 'react';
 const Home = () => {
     return (
         <div className=' grid grid-cols-2 max-w-screen-xl mx-auto h-screen'>
-
-
             <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                 <h1 className="text-7xl font-bold leading-none sm:text-6xl">Ac mattis
                     <span className="dark:text-violet-600">senectus</span>erat pharetra
