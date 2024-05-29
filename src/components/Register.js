@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
@@ -57,30 +57,27 @@ const Register = () => {
             .catch(e => console.error(e))
     }
     return (
-        <div className='flex justify-center items-center h-screen max-w-screen-xl mx-auto'>
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 text-gray-800">
+        <div className='h-screen dark:bg-[#1F2937] flex justify-center items-center transition duration-300'>
+            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 dark:bg-[#111827] text-gray-800 dark:text-gray-300 shadow-md">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form onSubmit={handleSubmit} noValidate="" className="space-y-6">
                     <div className="space-y-1 text-sm">
-                        <input type="text" name="username" id="username" placeholder="Full-name" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
+                        <input type="text" name="username" id="username" placeholder="Full-name" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937]  focus:border-violet-600" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <input type="text" name="photourl" id="photourl" placeholder="Photo-URL" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
+                        <input type="text" name="photourl" id="photourl" placeholder="Photo-URL" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937]  focus:border-violet-600" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
+                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937] focus:border-violet-600" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <input type="password" name="password" id="password" placeholder="**********" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" />
-                        <div className="flex justify-end text-xs text-gray-600">
-                            <a className='underline text-violet-600' rel="noopener noreferrer" href="#">Forgot Password?</a>
-                        </div>
+                        <input type="password" name="password" id="password" placeholder="**********" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937]  focus:border-violet-600" />
                     </div>
                     <button className="block w-full p-3 text-center  text-gray-50 bg-violet-600 active:bg-violet-500 rounded-md ">Register</button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
-                    <p className="px-3 text-sm text-gray-600">Register with social accounts</p>
+                    <p className="px-3 text-sm">Register with social accounts</p>
                     <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
                 </div>
                 <div className="flex justify-center space-x-4">
@@ -100,8 +97,8 @@ const Register = () => {
                         </svg>
                     </button>
                 </div>
-                <p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
-                    <a rel="noopener noreferrer" href="#" className="underline text-gray-800">Sign up</a>
+                <p className="text-xs text-center sm:px-6 ">Already have an account?
+                    <Link to='/login' className="underline ">Login</Link>
                 </p>
             </div>
         </div>

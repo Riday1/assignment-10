@@ -11,13 +11,12 @@ const Courses = () => {
     const courses = useLoaderData();
 
     return (
-        <div className='max-w-screen-xl mx-auto z-0'>
-            <div className='grid grid-cols-12'>
+        <div className=' dark:bg-[#1F2937] transition duration-300'>
+            <div className='grid grid-cols-12 max-w-screen-xl mx-auto'>
                 <div className='col-span-3 '>
                     <Sidebar></Sidebar>
                 </div>
                 <div className='col-span-9 p-6 '>
-                    {/* <Outlet></Outlet> */}
                     <CourseContainer courses={courses}></CourseContainer>
                 </div>
             </div>
@@ -26,3 +25,6 @@ const Courses = () => {
 };
 
 export default Courses;
+
+
+

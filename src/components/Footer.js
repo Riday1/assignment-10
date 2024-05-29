@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaSquareXTwitter } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 
 const Footer = () => {
     return (
-        <footer className="px-4 divide-y bg-gray-100 text-gray-800   bottom-0 w-full">
-            <div className="max-w-screen-xl mx-auto  flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+        <footer className="px-4 divide-y dark:bg-[#374151] bg-gray-100 text-gray-800 dark:text-gray-300 w-full transition duration-300">
+            <div className="max-w-screen-xl mx-auto  flex flex-col justify-between py-4 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3 flex justify-center items-center space-x-3 lg:justify-start">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-violet-600">
                     </div>
@@ -14,64 +15,64 @@ const Footer = () => {
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3">
-                        <h3 className="text-xl uppercase text-gray-900">Product</h3>
+                        <h3 className="text-xl uppercase ">Product</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">Features</a>
+                                <Link to='#'>Features</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Integrations</a>
+                                <Link to='#'>Integrations</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Pricing</a>
+                                <Link to='#'>Pricing</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">FAQ</a>
+                                <Link to='#'>FAQ</Link>
                             </li>
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <h3 className="text-xl uppercase text-gray-900">Company</h3>
+                        <h3 className="text-xl uppercase ">Company</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">Privacy</a>
+                                <Link to='#'>Privacy</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                                <Link to='#'>Terms of Service</Link>
                             </li>
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <h3 className="text-xl uppercase text-gray-900">Developers</h3>
+                        <h3 className="text-xl uppercase ">Developers</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">Public API</a>
+                                <Link to='#'>Public API</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Documentation</a>
+                                <Link to='#'>Documentation</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Guides</a>
+                                <Link to='#'>Guides</Link>
                             </li>
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <p className="text-xl uppercase text-gray-900">Social media</p>
+                        <p className="text-xl uppercase">Social media</p>
                         <div className="flex justify-evenly  space-x-3">
-                            <a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center p-1 ">
+                            <Link to='#' title="Facebook" className="flex items-center p-1 ">
                                 <FaFacebook className='w-6 h-6'></FaFacebook>
-                            </a>
-                            <a rel="noopener noreferrer" href="#" title="Twitter" className="flex items-center p-1">
+                            </Link>
+                            <Link to='#' title="Twitter" className="flex items-center p-1">
                                 <FaSquareXTwitter className='w-6 h-6' />
-                            </a>
-                            <a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center p-1">
+                            </Link>
+                            <Link to='#' title="Instagram" className="flex items-center p-1">
                                 <FaInstagram className='w-6 h-6' />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="py-6 text-sm text-center text-gray-600">© All rights reserved by,, Tech Tutor</div>
+            <div className="py-6 text-sm text-center max-w-screen-xl mx-auto ">© All rights reserved by,, Tech Tutor</div>
         </footer >
     );
 };
