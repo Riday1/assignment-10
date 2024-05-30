@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className="px-4 divide-y dark:bg-[#374151] bg-gray-100 text-gray-800 dark:text-gray-300 w-full transition duration-300">
-            <div className="max-w-screen-xl mx-auto  flex flex-col justify-between py-4 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-                <div className="lg:w-1/3 flex justify-center items-center space-x-3 lg:justify-start">
+            <div className="max-w-screen-xl px-0 md:px-6 flex flex-col justify-between py-4 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+                <div className=" lg:w-1/4 hidden lg:flex justify-center items-center space-x-3 lg:justify-start">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-violet-600">
                     </div>
                     <span className="self-center text-2xl font-semibold">Tech Tutor</span>

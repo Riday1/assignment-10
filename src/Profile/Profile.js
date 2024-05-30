@@ -65,19 +65,19 @@ const Profile = () => {
                 <form onSubmit={handleSubmit} noValidate="" action="" className="space-y-4">
                     <div>
                         <label htmlFor="email" className="text-start block mb-1 text-sm">Email address</label>
-                        <input defaultValue={email} readOnly type="email" name="email" id="email" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                        <input defaultValue={email} readOnly type="email" name="email" id="email" placeholder="" className="w-full px-3 py-2  rounded-mdborder  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937]  focus:border-violet-600" />
                     </div>
                     <div>
                         <label htmlFor="userName" className="text-start block mb-1 text-sm">User Name</label>
-                        <input defaultValue={name} type="text" name="userName" id="userName" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                        <input defaultValue={name} type="text" name="userName" id="userName" placeholder="" className="w-full px-3 py-2  rounded-md border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937]  focus:border-violet-600" />
                     </div>
                     <div>
                         <label htmlFor="photoUrl" className="text-start block mb-1 text-sm">Photo Url</label>
-                        <input defaultValue={url} type="text" name="photoUrl" id="photoUrl" placeholder="" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                        <input defaultValue={url} type="text" name="photoUrl" id="photoUrl" placeholder="" className="w-full px-3 py-2  rounded-md border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937]  focus:border-violet-600" />
                     </div>
                     <div>
                         <label htmlFor="password" className="text-start block mb-1 text-sm">Password</label>
-                        <input type="password" name="password" id="password" placeholder="********************" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                        <input type="password" name="password" id="password" placeholder="********************" className="w-full px-3 py-2  rounded-md border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937]  focus:border-violet-600" />
                     </div>
 
                     <input className='w-full px-8 py-3 font-semibold rounded-md bg-violet-600 text-gray-50 cursor-pointer' type="submit" value="Update User Info" />

@@ -25,8 +25,8 @@ const Header = () => {
                 <NavLink to='/' className="flex items-center ">
                     <img src={darkMode ? logo_dark : logo_white} className='w-14 h-14 md:w-28 md:h-28' alt="" />
                 </NavLink>
-                <div className={`absolute  py-3 md:py-0 w-full bg-gray-100 dark:bg-gray-700 md:bg-none ${toggleMenu ? 'top-[-500px]' : 'top-[50px]'}  duration-300 md:static md:inset-0 md:flex justify-center  items-center space-y-3 md:space-y-0 list-none shadow-lg md:shadow-none`}>
-                    <li><NavLink to='/courses' style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className={` sm:mx-0 mx-4 -mb-1 sm:py-2 md:py-4`}>Courses</NavLink></li>
+                <div className={`absolute  py-3 md:py-0 w-full bg-gray-100 dark:bg-gray-700 md:bg-none ${toggleMenu ? 'top-[-500px]' : 'top-[50px]'} transition duration-300 md:static md:inset-0 md:flex justify-center  items-center space-y-3 md:space-y-0 list-none shadow-lg md:shadow-none`}>
+                    <li><NavLink to='/courses' style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className={` sm:mx-0  md:mx-4 -mb-1 sm:py-2 md:py-4`}>Courses</NavLink></li>
                     <li><NavLink to="/blog" style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className="sm:mx-0 md:mx-4 -mb-1 sm:py-2 py-4">Blog</NavLink></li>
                     <li><NavLink to="/contact" style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className="sm:mx-0  md:mx-4 -mb-1 sm:py-2 py-4">Contact</NavLink></li>
                     {user?.emailVerified ?
@@ -34,8 +34,8 @@ const Header = () => {
                         :
 
                         <>
-                            <li><NavLink to='/login' style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className="sm:mx-0 md:mx-4  -mb-1 py-4">Sign in</NavLink></li>
-                            <li><NavLink to='/register' style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className="sm:mx-0 md:mx-4  -mb-1 py-4">Sign up</NavLink></li>
+                            <li><NavLink to='/login' style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className="sm:mx-0  md:mx-4 -mb-1 sm:py-2 py-4">Sign in</NavLink></li>
+                            <li><NavLink to='/register' style={({ isActive }) => { return { borderBottom: isActive ? "2px solid #7c3aed" : "" } }} className="sm:mx-0  md:mx-4 -mb-1 sm:py-2 py-4">Sign up</NavLink></li>
                         </>
                     }
                 </div>
