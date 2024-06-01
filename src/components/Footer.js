@@ -72,7 +72,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="py-6 text-sm text-center max-w-screen-xl mx-auto ">© All rights reserved by,, Tech Tutor</div>
+            <div className="py-6 text-sm text-center max-w-screen-xl mx-auto ">© All rights reserved by-Ridoy Hossain</div>
         </footer >
     );
 };

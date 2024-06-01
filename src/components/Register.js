@@ -66,7 +66,7 @@ const Register = () => {
             .catch(e => console.error(e))
     }
     return (
-        <div className='h-screen dark:bg-[#1F2937] flex justify-center items-center transition duration-300 px-5 sm:px-0'>
+        <div className='h-screen dark:bg-[#1F2937] flex justify-center items-center transition duration-300 px-5 sm:px-0 '>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 dark:bg-[#111827] text-gray-800 dark:text-gray-300 shadow-md transition duration-300">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form onSubmit={handleSubmit} noValidate="" className="space-y-6">
