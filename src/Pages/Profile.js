@@ -48,15 +48,15 @@ const Profile = () => {
     return (
 
         <div className=' dark:bg-[#1F2937] dark:text-gray-300 h-screen w-full flex items-center justify-center transition duration-300'>
-            <div className=" sm:max-w-md md:max-w-3xl   p-4 rounded-xl sm:p-6 bg-gray-50 dark:text-gray-800 shadow-md mx-auto ">
+            <div className=" sm:max-w-md md:max-w-3xl   p-4 rounded-xl sm:p-6 g-gray-100 dark:bg-[#111827] text-gray-800 dark:text-gray-300  transition duration-300 shadow-md mx-auto ">
                 {/* profile picture + name section */}
                 <div className=" text-center">
-                    <div className="flex flex-col justify-center  p-2  sm:px-12  text-gray-800 mx-auto">
+                    <div className="flex flex-col justify-center  p-2  sm:px-12 mx-auto">
                         <img src={photoURL} alt="" className="w-32 h-32 mx-auto rounded-full bg-gray-500 aspect-square ring-2 ring-offset-4 ring-violet-600" />
                         <div className="space-y-4 text-center divide-y divide-gray-300">
                             <div className="my-2 space-y-1">
-                                <h2 className="text-xl font-semibold sm:text-2xl">{displayName}</h2>
-                                <p className="px-5 font-semibold text-md sm:text-base text-gray-600">ID: {uid}</p>
+                                <h2 className="text-xl  font-semibold sm:text-2xl">{displayName}</h2>
+                                <p className="px-5 font-semibold text-md sm:text-base">ID: {uid}</p>
                             </div>
                         </div>
                     </div>

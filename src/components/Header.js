@@ -40,14 +40,14 @@ const Header = () => {
                     }
                 </div>
 
-                <div className='md:flex items-center justify-center p-4 md:p-0'>
+                <div className='flex items-center justify-center p-4 md:p-0'>
                     {
                         user?.emailVerified &&
-                        <div className='md:flex items-center flex-shrink-0  space-x-5'>
+                        <div className='flex items-center flex-shrink-0  space-x-5'>
                             <NavLink to='/profile'>
                                 <div className="relative flex-shrink-0">
                                     {/* <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border rounded-full dark:text-gray-800 border-gray-50"></span> */}
-                                    <img src={user?.photoURL} alt="" className="w-10 h-10  rounded-full  ring-2 ring-offset-4 ring-violet-600" />
+                                    <img src={user?.photoURL} alt="" className="w-5 h-5 md:w-10 md:h-10  rounded-full  ring-2 ring-offset-4 ring-violet-600" />
                                 </div>
                             </NavLink>
                             <button onClick={handleLogOut} className='px-6 py-2 focus:font-semibold focus:bg-violet-600  focus:text-white rounded' >Logout</button>

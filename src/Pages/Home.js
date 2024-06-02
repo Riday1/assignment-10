@@ -14,7 +14,7 @@ const Home = () => {
     };
 
     return (
-        <section className='dark:bg-[#1F2937]  dark:text-gray-300 '>
+        <section className='dark:bg-[#1F2937]  dark:text-gray-300 transition duration-300'>
             <div className=' grid grid-cols-1 md:grid-cols-2 max-w-screen-xl mx-auto h-screen'>
                 <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                     <h1 className="text-5xl md:text-7xl font-bold leading-none sm:text-6xl">Welcome to

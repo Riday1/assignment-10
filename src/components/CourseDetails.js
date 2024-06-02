@@ -5,6 +5,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import { FaStar } from "react-icons/fa6"
 import { FaDollarSign } from "react-icons/fa6";
 import { FaRegFilePdf } from "react-icons/fa6";
+import { usePDF } from 'react-to-pdf'
 
 
 const CourseDetails = () => {
@@ -12,19 +13,20 @@ const CourseDetails = () => {
     const navigate = useNavigate()
     const { id, category_id, category_name, details, image, price, ratings, review, title } = courseDetails// I WILL MODIFY IT 5 MINUTES LATER
 
+    const { toPDF, targetRef } = usePDF({ filename: 'page.pdf' });
     return (
 
-        <div className='h-screen flex justify-center items-center'>
-            <div className="flex flex-col max-w-xl p-6 space-y-6  rounded-lg shadow-md bg-gray-100 mt-5 text-gray-800">
+        <div className='h-screen flex justify-center items-center dark:bg-[#1F2937]'>
+            <div ref={targetRef} className="flex flex-col max-w-xl p-6 space-y-6  rounded-lg shadow-md bg-gray-100 dark:bg-[#111827] text-gray-800 dark:text-gray-300">
                 <div className="flex space-x-4 items-center">
                     <h1 className='text-xl font-bold flex-grow'>COURSE DETAILS </h1>
-                    <button className='text-2xl bg-violet-700 text-white rounded py-1 px-2'><FaRegFilePdf /></button>
+                    <button onClick={() => toPDF()} className='text-2xl bg-violet-700 text-white rounded py-1 px-2'><FaRegFilePdf /></button>
 
                 </div>
                 <div className='mt-3'>
                     <img src={image} alt="" className="rounded-md w-full h-62" />
                     <h2 className="mb-1 text-xl font-semibold">{title}</h2>
-                    <p className="text-sm dark:text-gray-600">{details?.short_brief}</p>
+                    <p className="text-sm dark:text-gray-300">{details?.short_brief}</p>
                 </div>
                 <div>
                     {

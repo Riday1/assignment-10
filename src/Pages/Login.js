@@ -87,7 +87,6 @@ const Login = () => {
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-100 dark:bg-[#111827] text-gray-800 dark:text-gray-300 shadow-md transition duration-300">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSubmit} noValidate="" action="" className="space-y-6">
-
                     <div className="space-y-1 text-sm">
                         <input onChange={handleEmailChange} type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md outline-none border  border-2 border-gray-300 bg-gray-50 dark:bg-[#1F2937] focus:border-violet-600" />
                     </div>

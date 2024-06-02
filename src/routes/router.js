@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import ErrorPage from "../Pages/ErrorPage";
-import Login from "../components/Login";
+import Login from "../Pages/Login";
 import Courses from "../components/Courses";
-import Profile from "../Profile/Profile";
-import Register from "../components/Register";
+import Profile from "../Pages/Profile";
+import Register from "../Pages/Register";
 import Blog from "../components/Blog";
 import Contact from "../components/Contact";
 import CourseDetails from '../components/CourseDetails'
